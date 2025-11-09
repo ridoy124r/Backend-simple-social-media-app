@@ -8,7 +8,11 @@ const router = express.Router();
 
 
 // Register GET
-router.get("/register", (req, res) => res.render("register"));
+
+router.get("/register", (req, res) => {
+  res.render("register"); // views/register.ejs
+});
+
 
 
 // Register POST

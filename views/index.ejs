@@ -14,10 +14,15 @@
     body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Top navigation -->
-  <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-    <div class="flex items-center gap-3">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+
+<!-- Top navigation -->
+<header class="w-full bg-gray-50 shadow-sm fixed top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    <!-- Logo and brand -->
+    <div class="flex items-center gap-4">
       <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-400 to-cyan-600 flex items-center justify-center text-white font-bold">C</div>
       <div>
         <h1 class="text-lg font-semibold">Connect</h1>
@@ -25,36 +30,28 @@
       </div>
     </div>
 
+    <!-- Navigation links -->
     <nav class="flex items-center gap-4">
-      <a href="#features" class="text-sm hover:underline">Features</a>
-      <a href="#how" class="text-sm hover:underline">How it works</a>
-      <a href="/login" class="ml-4 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-transparent bg-white text-sm font-semibold shadow-sm hover:bg-gray-100">Login</a>
-      <a href="/signup" class="ml-2 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-to-r from-teal-500 to-cyan-400 text-white text-sm font-semibold shadow-lg">Get Started</a>
+      <a href="/login" class="px-4 py-2 rounded-md border border-transparent bg-white text-sm font-semibold shadow-sm hover:bg-gray-100 transition">Login</a>
+      <a href="/register" class="px-4 py-2 rounded-md bg-gradient-to-r from-teal-500 to-cyan-400 text-white text-sm font-semibold shadow-lg hover:opacity-90 transition">Get Started</a>
     </nav>
-  </header>
+    
+  </div>
+</header>
 
-  <!-- Hero -->
-  <main class="max-w-7xl mx-auto px-6">
+<!-- Spacer to prevent content hiding behind fixed header -->
+<div class="h-20"></div>
+
+  <!-- Main content -->
+  <main class="flex-grow max-w-7xl mx-auto px-6">
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12">
       <div class="space-y-6">
         <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Welcome to Connect — where your story finds friends</h2>
         <p class="text-lg text-gray-600">Post updates, follow creators, and discover communities that match your interests. Lightweight, private-first, and built for people — not algorithms.</p>
 
         <div class="flex items-center gap-3">
-          <a href="/signup" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-400 text-white font-semibold shadow-md">Create account</a>
+          <a href="/register" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-400 text-white font-semibold shadow-md">Create account</a>
           <a href="/login" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 bg-white text-sm font-medium shadow-sm hover:bg-gray-50">Sign in</a>
-        </div>
-
-        <div class="flex items-center gap-4 text-sm text-gray-500">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
-            <span>Join 12,000+ active users</span>
-          </div>
-          <div class="h-5 w-px bg-gray-200"></div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span>Fast signup — email or social</span>
-          </div>
         </div>
       </div>
 
@@ -75,61 +72,31 @@
 
           <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
             <div class="flex items-center gap-6">
-              <div class="flex items-center gap-2"><svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 9l-2 2m0 0l-2-2m2 2V3"/></svg> Like</div>
-              <div class="flex items-center gap-2"><svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 3.866-3.582 7-8 7s-8-3.134-8-7c0-3.866 3.582-7 8-7s8 3.134 8 7z"/></svg> Comment</div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 9l-2 2m0 0l-2-2m2 2V3"/>
+                </svg> Like
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 3.866-3.582 7-8 7s-8-3.134-8-7c0-3.866 3.582-7 8-7s8 3.134 8 7z"/>
+                </svg> Comment
+              </div>
             </div>
             <div class="text-xs">23 likes</div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Features -->
-    <section id="features" class="py-10">
-      <h3 class="text-2xl font-bold mb-6">Why people choose Connect</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-5 rounded-xl shadow-sm">
-          <h4 class="font-semibold">Communities</h4>
-          <p class="text-sm text-gray-500 mt-2">Create or join interest-based groups to meet like-minded people.</p>
-        </div>
-        <div class="bg-white p-5 rounded-xl shadow-sm">
-          <h4 class="font-semibold">Private by default</h4>
-          <p class="text-sm text-gray-500 mt-2">Control who sees your posts with granular privacy settings.</p>
-        </div>
-        <div class="bg-white p-5 rounded-xl shadow-sm">
-          <h4 class="font-semibold">Fast feed</h4>
-          <p class="text-sm text-gray-500 mt-2">Lightweight timeline built for speed and simplicity.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="how" class="py-8">
-      <h3 class="text-2xl font-bold mb-4">How it works</h3>
-      <ol class="space-y-4 text-gray-600">
-        <li class="flex items-start gap-3"><span class="w-8 h-8 flex items-center justify-center rounded-full bg-teal-100 text-teal-700 font-semibold">1</span> Sign up quickly with email or OAuth.</li>
-        <li class="flex items-start gap-3"><span class="w-8 h-8 flex items-center justify-center rounded-full bg-teal-100 text-teal-700 font-semibold">2</span> Follow interests and people you care about.</li>
-        <li class="flex items-start gap-3"><span class="w-8 h-8 flex items-center justify-center rounded-full bg-teal-100 text-teal-700 font-semibold">3</span> Post updates, react, and join conversations.</li>
-      </ol>
-    </section>
-
-    <!-- CTA strip -->
-    <section class="mt-8 mb-20 rounded-xl bg-gradient-to-r from-white to-teal-50 p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>
-        <h4 class="text-lg font-semibold">Ready to start sharing?</h4>
-        <p class="text-sm text-gray-600">Create your free account and join the community.</p>
-      </div>
-      <div class="flex gap-3">
-        <a href="/signup" class="inline-block px-5 py-3 rounded-md bg-gradient-to-r from-teal-500 to-cyan-400 text-white font-semibold shadow">Create account</a>
-        <a href="/login" class="inline-block px-5 py-3 rounded-md border border-gray-200 bg-white">Sign in</a>
-      </div>
-    </section>
   </main>
 
-  <footer class="border-t py-6 mt-8">
+  <!-- Footer -->
+  <footer class="border-t py-8 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-sm text-gray-500">© <strong>Connect</strong> — Built with care.</div>
-      <div class="flex items-center gap-4 text-sm text-gray-500">
+      <div class="text-sm text-gray-500 text-center md:text-left">
+        © <strong>Connect</strong> — Built with care.
+      </div>
+      <div class="flex flex-wrap justify-center md:justify-end items-center gap-4 text-sm text-gray-500">
         <a href="#" class="hover:underline">Privacy</a>
         <a href="#" class="hover:underline">Terms</a>
         <a href="#" class="hover:underline">Contact</a>
