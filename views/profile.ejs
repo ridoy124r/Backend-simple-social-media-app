@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Profile</title>
+</head>
+<body>
+  <h1><%= user.email %> - Profile</h1>
+
+  <form method="POST" action="/posts/create-post">
+    <textarea name="content" required></textarea>
+    <button>Create Post</button>
+  </form>
+
+  <ul>
+    <% posts.forEach(post => { %>
+      <li>
+        <p><%= post.content %></p>
+        <p>Likes: <%= post.likes?.length || 0 %></p>
+        <form method="POST" action="/posts/like/<%= post.id %>">
+          <button>Toggle Like</button>
+        </form>
+        <% if (post.userId === user.id) { %>
+          <a href="/posts/edit/<%= post.id %>">Edit</a>
+          <a href="/posts/delete/<%= post.id %>">Delete</a>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/logout">Logout</a>
+</body>
+</html>

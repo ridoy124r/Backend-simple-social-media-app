@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Edit Post</title>
+</head>
+<body>
+  <h1>Edit</h1>
+  <form method="POST" action="/posts/edit/<%= post.id %>">
+    <textarea name="content" required><%= post.content %></textarea>
+    <button>Save</button>
+  </form>
+  <a href="/profile">Back</a>
+</body>
+</html>
