@@ -16,13 +16,21 @@ model User {
   likes    PostLike[]
 }
 
+
+
 model Post {
-  id      String     @id @default(cuid())
-  content String
-  date    DateTime   @default(now())
-  userId  String
-  user    User       @relation(fields: [userId], references: [id])
-  likes   PostLike[]
+  id        String    @id @default(cuid())
+  content   String
+  userId    String
+
+  imagePath String?  
+  date      DateTime  @default(now())
+
+
+  user      User      @relation(fields: [userId], references: [id])
+  likes     PostLike[]
+
+  @@index([userId])
 }
 
 model PostLike {
